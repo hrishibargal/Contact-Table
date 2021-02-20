@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import sample.Data.Contact;
 import java.util.regex.Pattern;
 
-public class NewWindow1 {
+public class UpdateContact {
     @FXML
     private TextField firstNameField;
     @FXML

@@ -12,7 +12,7 @@ import sample.Data.DataModel;
 
 import java.util.regex.Pattern;
 
-public class NewWindow {
+public class addContact {
     @FXML
     private TextField firstNameField;
     @FXML

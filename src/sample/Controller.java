@@ -3,8 +3,6 @@ package sample;
 
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
@@ -15,7 +13,6 @@ import javafx.scene.layout.BorderPane;
 
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import sample.Data.Contact;
 import sample.Data.DataModel;
 
@@ -73,7 +70,7 @@ public class Controller {
 //         Dialog<ButtonType> dialog=new Dialog<>();
 //        dialog.initOwner(main.getScene().getWindow());
 //        FXMLLoader fxmlLoader=new FXMLLoader();
-//        fxmlLoader.setLocation(getClass().getResource("newWindow.fxml"));
+//        fxmlLoader.setLocation(getClass().getResource("addContact.fxml"));
 //        dialog.getDialogPane().setContent(fxmlLoader.load());
 //
 //
@@ -118,7 +115,7 @@ public class Controller {
     }
     public void newWindow() throws IOException {
         FXMLLoader fxmlLoader=new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("newWindow.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("addContact.fxml"));
         Parent root=fxmlLoader.load();
         Stage stage=new Stage();
         stage.setTitle("New Contact Window");
@@ -131,7 +128,7 @@ public class Controller {
         Contact contact=tableView.getSelectionModel().getSelectedItem();
         if (contact!=null){
             FXMLLoader fxmlLoader=new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("newWindow1.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("UpdateContact.fxml"));
             Parent root=fxmlLoader.load();
             Stage stage=new Stage();
             stage.setTitle("New Contact Window");
@@ -139,7 +136,7 @@ public class Controller {
             stage.initOwner(main.getScene().getWindow());
             stage.setScene(new Scene(root));
             stage.show();
-           NewWindow1 newWindow=fxmlLoader.getController();
+           UpdateContact newWindow=fxmlLoader.getController();
             newWindow.editContact(contact);
             newWindow.updateContact(contact);
         }
